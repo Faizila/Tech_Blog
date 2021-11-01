@@ -2,11 +2,14 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
 const homeRoutes = require('./homeRoutes');
+const dashboardRoutes = require('./dashboardRoutes');
 
 
 // routes
-router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
+router.use('/dashboard', dashboardRoutes);
+
 
 // message for wrong route
 router.use((req, res) => {

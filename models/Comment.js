@@ -19,9 +19,6 @@ class Comment extends Model {}
       comment: {
           type: DataTypes.STRING,
           allowNull: false,
-          validate: {
-            len: [2]
-        }
       },
       user_id: {
           type: DataTypes.INTEGER,
