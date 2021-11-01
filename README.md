@@ -1,5 +1,10 @@
 # Tech_Blog
+
 Model-View-Controller (MVC): Tech Blog
+
+# Heroku link
+
+https://mighty-bastion-50342.herokuapp.com/
 
 # Description
 
@@ -10,11 +15,10 @@ A site where developers can publish their blog posts and comment on other develo
 * Built With
 * Installation
 * Usage
-* Testing
-* License
-* Link
 * Screenshots
+* Testing
 * Questions
+* Reference
 
 # Built With
 
@@ -88,25 +92,17 @@ The application will be invoked by using the following command:
 npm start
 ```
 
-# Testing
-
-* Uses the [Insomnia](https://insomnia.rest/download) to test the code.
-
-![insomnia](https://user-images.githubusercontent.com/78191579/139753024-1e9d2ca4-7009-4463-a6bf-0d806193e641.JPG)
-
-# License
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-# Heroku link
-
-https://mighty-bastion-50342.herokuapp.com/
-
 # Screenshots
 
 ![npmstart](https://user-images.githubusercontent.com/78191579/139748250-f5079436-8ab0-4ed7-9510-e4a8b3a3fd59.JPG)
 ![seeds](https://user-images.githubusercontent.com/78191579/139748253-4ff31e6c-b551-464b-bde0-2a7eed9a5aa4.JPG)
 ![hashing](https://user-images.githubusercontent.com/78191579/139748233-0bcd4db3-13a1-425c-8640-bd2a01390e63.JPG)
+
+# Testing
+
+* Uses the [Insomnia](https://insomnia.rest/download) to test the code.
+
+![insomnia](https://user-images.githubusercontent.com/78191579/139753024-1e9d2ca4-7009-4463-a6bf-0d806193e641.JPG)
 
 # Questions
 
