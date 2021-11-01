@@ -1,19 +1,17 @@
 const router = require('express').Router();
-const { User } = require('../models');
-const withAuth = require('../utils/auth');
+const { User, Post, Comment } = require('../models');
 
-router.get('/', withAuth, async (req, res) => {
+// GET all
+router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll({
-      // exclude password
-      attributes: { exclude: ['password'] },
-    });
+    const postData = await Post.findAll({
+     });
 
-    // map and get only true values
-    const users = userData.map((post) => post.get({ plain: true }));
+    // map serialize data before sending it to homepage template
+    const posts = postData.map((post) => post.get({ plain: true }));
 // homepage.handlebars
     res.render('homepage', {
-      users,
+      posts,
       logged_in: req.session.logged_in,
     });
     // error
@@ -22,7 +20,9 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// /login
 router.get('/login', (req, res) => {
+  // if logged in
   if (req.session.logged_in) {
     res.redirect('/');
     return;
@@ -31,4 +31,15 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// /signup
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+// signup.handlebars
+  res.render('signup');
+});
+
+// export
 module.exports = router;
