@@ -5,6 +5,18 @@ const withAuth = require('../../utils/auth');
 
 // api/users
 
+// GET all
+router.get('/', (req, res) => {
+   User.findAll({
+      attributes: { exclude: ['password'] }
+  })
+    .then(userData => res.json(userData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 // LOGIN
 router.post('/login', async (req, res) => {
   try {
