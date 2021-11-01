@@ -70,7 +70,16 @@ npm i handlebars
 ```bash
 npm install connect-session-sequelize
 ```
+
 # Usage
+
+Add a .env file to the root of the project:
+
+```
+DB_NAME='blogger_db'
+DB_USER='root'
+DB_PASSWORD='XXXX'
+```
 
 The application will be invoked by using the following command:
 

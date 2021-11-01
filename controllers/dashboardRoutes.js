@@ -45,5 +45,9 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
+// CREATE post
+
+// EDIT post
+
 // export
 module.exports = router;
