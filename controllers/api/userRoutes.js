@@ -1,5 +1,6 @@
+// import
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post, Comment } = require('../models');
 
 // api/users
 
