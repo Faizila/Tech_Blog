@@ -15,41 +15,13 @@ const loginFormHandler = async (event) => {
       });
       
       if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboard');
       } else {
         alert('Login Failed!');
       }
     }
   };
-
-  // signup
-  const signupFormHandler = async (event) => {
-    
-    event.preventDefault();
-  
-    const username = document.querySelector('#namelogin').value.trim();
-    const email = document.querySelector('#elogin').value.trim();
-    const password = document.querySelector('#plogin').value.trim();
-  
-    if (username && email && password) {
-      // e-mail and password input info sent to the server
-      const response = await fetch('/api/users', {
-        // POST method
-        method: 'POST',
-        body: JSON.stringify({ username, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-      
-      if (response.ok) {
-      document.location.replace('/');
-      } else {
-        alert("Signup failed.. Please try again!");
-      }
-    }
-  };
-  
-  // login
-  document.querySelector('#logform').addEventListener('submit', loginFormHandler);
-  // signup 
-  document.querySelector('#signupform').addEventListener('submit', signupFormHandler);
+// login
+document.querySelector('#loginform').addEventListener('submit', loginFormHandler);
+ 
   
