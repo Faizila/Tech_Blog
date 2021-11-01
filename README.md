@@ -10,6 +10,7 @@ A site where developers can publish their blog posts and comment on other develo
 * Built With
 * Installation
 * Usage
+* Testing
 * License
 * Link
 * Screenshots
@@ -86,6 +87,12 @@ The application will be invoked by using the following command:
 ```bash
 npm start
 ```
+
+# Testing
+
+* Uses the [Insomnia](https://insomnia.rest/download) to test the code.
+
+![insomnia](https://user-images.githubusercontent.com/78191579/139753024-1e9d2ca4-7009-4463-a6bf-0d806193e641.JPG)
 
 # License
 
