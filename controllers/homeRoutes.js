@@ -1,0 +1,34 @@
+const router = require('express').Router();
+const { User } = require('../models');
+const withAuth = require('../utils/auth');
+
+router.get('/', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      // exclude password
+      attributes: { exclude: ['password'] },
+    });
+
+    // map and get only true values
+    const users = userData.map((post) => post.get({ plain: true }));
+// homepage.handlebars
+    res.render('homepage', {
+      users,
+      logged_in: req.session.logged_in,
+    });
+    // error
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+// login.handlebars
+  res.render('login');
+});
+
+module.exports = router;
