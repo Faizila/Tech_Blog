@@ -102,8 +102,8 @@ npm start
 
 * Uses the [Insomnia](https://insomnia.rest/download) to test the code.
 
-![insomnia](https://user-images.githubusercontent.com/78191579/139758429-e4f2bd9f-a909-467a-952c-f838b7bd76df.JPG)
-![insomnia2](https://user-images.githubusercontent.com/78191579/139759527-1b39c73c-0d00-4bf8-90f2-a13f233eebf7.JPG)
+![insomnia](https://user-images.githubusercontent.com/78191579/139770943-87d0d088-2a18-4d20-8ac2-d2ac9caa7363.JPG)
+![insomnia2](https://user-images.githubusercontent.com/78191579/139770947-48f3afd2-135e-4815-8252-5fc98cb95afa.JPG)
 
 # Questions
 

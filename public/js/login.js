@@ -2,8 +2,8 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
     
-    const email = document.querySelector('#elogin').value.trim();
-    const password = document.querySelector('#plogin').value.trim();
+    const email = document.getElementById('elogin').value.trim();
+    const password = document.getElementById('plogin').value.trim();
   
     if (email && password) {
       // e-mail and password input info sent to the server
@@ -22,6 +22,6 @@ const loginFormHandler = async (event) => {
     }
   };
 // login
-document.querySelector('#loginform').addEventListener('submit', loginFormHandler);
+document.getElementById('loginform').addEventListener('submit', loginFormHandler);
  
   

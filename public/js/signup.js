@@ -3,9 +3,9 @@
     
     event.preventDefault();
   
-    const username = document.querySelector('#namelogin').value.trim();
-    const email = document.querySelector('#elogin').value.trim();
-    const password = document.querySelector('#plogin').value.trim();
+    const username = document.getElementById('namelogin').value.trim();
+    const email = document.getElementById('elogin').value.trim();
+    const password = document.getElementById('plogin').value.trim();
   
     if (username && email && password) {
       // e-mail and password input info sent to the server
@@ -17,12 +17,14 @@
       });
       
       if (response.ok) {
+        // success
       document.location.replace('/dashboard');
       } else {
+        // error
         alert("Signup failed.. Please try again!");
       }
     }
   };
     
   // signup 
-  document.querySelector('#signupform').addEventListener('submit', signupFormHandler);
+  document.getElementById('signupform').addEventListener('submit', signupFormHandler);
