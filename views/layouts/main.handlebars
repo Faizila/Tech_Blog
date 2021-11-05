@@ -34,14 +34,14 @@
         <a class="nav-link" href="/dashboard/create">Create Post</a>
       </li>
       <li class="nav-item">
-        <button class="button is-danger" id="logout">Logout</button>
+        <button class="button is-danger" href="/users/logout" id="logout">Logout</button>
        </li>
        {{else}}
          <li class="nav-item active">
         <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
+        <a class="nav-link"  data-toggle="modal" data-target="#loginModal" id="login" href="/login">Login</a>
        </li>
        {{/if}}
        </ul>
@@ -50,13 +50,14 @@
 </nav> 
 </header>
 
-   {{!-- main --}}
+     {{!-- main --}}
     <main>
       {{{ body }}}
     </main>
-</div>
+
+
   {{!-- include logout script only if the user is logged in --}}
- {{#if logged_in}}
+{{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>

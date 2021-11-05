@@ -113,5 +113,5 @@ If you have any other questions or comments you can contact me at:
 
 # Reference
 
-Rice University class activities
+Rice University class activities/Projects
 
