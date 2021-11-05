@@ -1,13 +1,10 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
-const withAuth = require('../utils/auth');
 
-// GET all
+// GET 
 router.get('/', (req, res) => {
   try {
-
       res.render('homepage')
-
   } catch (err) {
       res.status(500).json(err);
   }
