@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
   }
 });
 
-// /login
+ // /login
 router.get('/login', (req, res) => {
   // if logged in
   if (req.session.logged_in) {

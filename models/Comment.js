@@ -29,15 +29,15 @@ class Comment extends Model {}
               key: 'id'
           },
         },
-      post_id: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-          // This references the `post` model, which we set in `Post.js` as its `modelName` property
-          references: {
-              model: 'post',
-              key: 'id'
-          },
-        },
+      // post_id: {
+      //     type: DataTypes.INTEGER,
+      //     allowNull: false,
+      //     // This references the `post` model, which we set in `Post.js` as its `modelName` property
+      //     references: {
+      //         model: 'post',
+      //         key: 'id'
+      //     },
+      //   },
       },
       {
  // Link to database connection

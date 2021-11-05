@@ -16,9 +16,9 @@ User.hasMany(Comment, {
 });
 
 // 1 post many comments
-Post.hasMany(Comment, {
-    foreignKey: 'post_id',
-});
+// Post.hasMany(Comment, {
+//     foreignKey: 'post_id',
+// });
 
 // comment belongs to user
 Comment.belongsTo(User, {
@@ -26,9 +26,9 @@ Comment.belongsTo(User, {
 });
 
 // comment belong to post
-Comment.belongsTo(Post, {
-    foreignKey: 'post_id',
-});
+// Comment.belongsTo(Post, {
+//     foreignKey: 'post_id',
+// });
 
 // post belongs to user
 Post.belongsTo(User, {
