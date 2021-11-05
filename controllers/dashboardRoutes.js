@@ -2,89 +2,24 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
+// /dashboard
 
-// GET
-router.get('/', withAuth, (req, res) => {
+//GET all post 
+router.get('/dashboard', withAuth,  async (req, res) => {
+  try {
     
-    Post.findAll({
-      where: {
-        // id from the session
-        user_id: req.session.user_id
-      },
-      attributes: [
-        'id',
-        'title',
-        'post',
-        'created_at'
-    ],
-      include: [
-        {
-          model: Comment,
-          attributes: ['id', 'comment', 'post_id', 'user_id', 'created_at'],
-          include: {
-            model: User,
-            attributes: ['username']
-          }
-        },
-        {
-          model: User,
-          attributes: ['username']
-        }
-      ]
-    })
-      .then(postData => {
-        // map serialize data before sending it to dashboard template
-        const posts = postData.map(post => post.get({ plain: true }));
-        // dashboard.handlebars
-        res.render('dashboard', { posts, logged_in: true });
+      res.render('dashboard', {
+        loggedIn: req.session.logged_in,
+      
       })
-    // error
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+    
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // CREATE post
-router.get('/create/', withAuth, (req, res) => {
-  Post.findAll({
-    where: {
-      // id from the session
-      user_id: req.session.user_id
-    },
-    attributes: [
-      'id',
-      'title',
-      'post',
-      'created_at'
-      ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
-    .then(postData => {
-       // map serialize data before sending it to create template
-      const posts = postData.map(post => post.get({ plain: true }));
-      // create.handlebars
-      res.render('create', { posts, logged_in: true });
-    })
-    // error
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+
 
 // EDIT post
 
