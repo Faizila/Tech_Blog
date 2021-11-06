@@ -9,7 +9,7 @@
   
     if (username && email && password) {
       // e-mail and password input info sent to the server
-      const response = await fetch('/api/users', {
+      const response = await fetch('/users', {
         // POST method
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
@@ -18,7 +18,7 @@
       
       if (response.ok) {
         // success
-      document.location.replace('/dashboard');
+      document.location.replace('/');
       } else {
         // error
         alert("Signup failed.. Please try again!");
