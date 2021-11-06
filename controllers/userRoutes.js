@@ -7,31 +7,35 @@ const withAuth = require('../utils/auth');
 
 // LOGIN
 router.post('/login', async (req, res) => {
-  try { 
-    const userData = await User.findOne({ where: {email: req.body.email } });
+  try {
+    const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
-      res.status(400).json({ message: 'Incorrect email address or password!' });
-        return;
-    }
-
-    const userPass = await userData.checkPassword(req.body.password);
-
-    if (!userPass) {
-      res.status(400).json({ message: 'Incorrect email address or password!' });   
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-     
-    req.session.save(() => {
-      req.session.user_id = userData.id
-      req.session.email = userData.email;
-      req.session.logged_in = true;
 
-      // dashboard.handlebars
-      res.render('dashboard');
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      
+      res.json({ user: userData, message: 'You are now logged in!' });
     });
-// error
-} catch (err){
+ // redirect
+ res.redirect('/dashboard');
+//  error
+  } catch (err) {
     res.status(400).json(err);
   }
 });

@@ -5,14 +5,27 @@ const withAuth = require('../utils/auth');
 // /dashboard
 
 //GET all post 
-router.get('/dashboard', withAuth,  async (req, res) => {
+router.post('/dashboard', async (req, res) => {
   try {
-    
-      res.render('dashboard', {
-        loggedIn: req.session.logged_in,
-      
-      })
-    
+    // Get all posts and JOIN with username
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    // dashboard.handlebars
+    res.render('dashboard', { 
+      posts, 
+      logged_in: req.session.logged_in 
+    });
+    // error
   } catch (err) {
     res.status(500).json(err);
   }
