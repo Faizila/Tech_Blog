@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 // /dashboard
 
 //GET all post 
-router.post('/dashboard', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     // Get all posts and JOIN with username
     const postData = await Post.findAll({
@@ -30,11 +30,6 @@ router.post('/dashboard', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// CREATE post
-
-
-// EDIT post
 
 // export
 module.exports = router;
