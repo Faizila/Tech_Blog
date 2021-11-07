@@ -1,7 +1,7 @@
 // login
 const loginFormHandler = async (event) => {
     event.preventDefault();
-    
+    console.log('---------------------button pressed------------------------')
     const email = document.getElementById('elogin').value.trim();
     const password = document.getElementById('plogin').value.trim();
   

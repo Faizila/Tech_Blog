@@ -8,6 +8,8 @@ const withAuth = require('../utils/auth');
 // LOGIN
 router.post('/login', async (req, res) => {
   try {
+    console.log(req.body)
+    console.log('=================================================================================================================')
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
