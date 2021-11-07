@@ -2,10 +2,6 @@
 
 Model-View-Controller (MVC): Tech Blog
 
-# Heroku link
-
-https://mighty-bastion-50342.herokuapp.com/
-
 # Description
 
 A site where developers can publish their blog posts and comment on other developers’ posts as well.
@@ -15,6 +11,7 @@ A site where developers can publish their blog posts and comment on other develo
 * Built With
 * Installation
 * Usage
+* Heroku Link
 * Screenshots
 * Videos
 * Testing
@@ -93,6 +90,10 @@ The application will be invoked by using the following command:
 npm start
 ```
 
+# Heroku link
+
+https://mighty-bastion-50342.herokuapp.com/
+
 # Screenshots
 
 ![npmstart](https://user-images.githubusercontent.com/78191579/139748250-f5079436-8ab0-4ed7-9510-e4a8b3a3fd59.JPG)
@@ -103,11 +104,11 @@ npm start
 
 Login & Logout functionality walkthrough video:
 <br>
-https://github.com/Faizila/Tech_Blog/blob/main/public/images/login.gif
+https://github.com/Faizila/Tech_Blog/blob/main/public/images/login1.gif
 <br>
 SignUp & Logout functionality walkthrough video:
 <br>
-https://github.com/Faizila/Tech_Blog/blob/main/public/images/signup.gif
+https://github.com/Faizila/Tech_Blog/blob/main/public/images/signup1.gif
 
 # Testing
 
