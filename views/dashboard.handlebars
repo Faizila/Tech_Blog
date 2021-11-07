@@ -1,7 +1,10 @@
 <section class="vh-100" style="background-color: #83505c;">
 
 <h2>Dashboard:</h2>
-
+  <div class="col-auto add">
+  <button id="submit-btn" type="submit" class="btn btn-dark mb-3">Create New Post</button>
+  </div>
+<br>
 {{#each posts as |post|}}
 
 {{> dashboard-details post}}

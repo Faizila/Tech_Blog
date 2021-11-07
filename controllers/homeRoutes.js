@@ -61,7 +61,7 @@ router.get('/login', (req, res) => {
   // if logged in
   if (req.session.logged_in) {
     // redirect the request to another route
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
 // login.handlebars
@@ -71,7 +71,7 @@ router.get('/login', (req, res) => {
 // /signup
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
 // signup.handlebars
