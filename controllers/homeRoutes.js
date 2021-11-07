@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
 // GET 
 router.get('/', async (req, res) => {
@@ -19,6 +20,33 @@ router.get('/', async (req, res) => {
 
     // homepage.handlebars
     res.render('homepage', { 
+      posts, 
+      logged_in: req.session.logged_in 
+    });
+    // error
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Dashboard
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // Get all posts and JOIN with username
+    const dashboardData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    // Serialize data so the template can read it
+    const posts = dashboardData.map((post) => post.get({ plain: true }));
+
+    // dashboard.handlebars
+    res.render('dashboard', { 
       posts, 
       logged_in: req.session.logged_in 
     });
