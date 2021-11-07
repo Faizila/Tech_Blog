@@ -9,7 +9,7 @@
   
     if (username && email && password) {
       // e-mail and password input info sent to the server
-      const response = await fetch('/users', {
+      const response = await fetch('/users/signup', {
         // POST method
         method: 'POST',
         body: JSON.stringify({ username, email, password }),

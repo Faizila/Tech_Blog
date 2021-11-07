@@ -30,8 +30,7 @@ router.post('/login', async (req, res) => {
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });
- // dashboard.handlebars
- res.render('dashboard');
+ res.render('homepage');
 //  error
   } catch (err) {
     res.status(400).json(err);
@@ -49,8 +48,7 @@ router.post('/signup', async  (req, res) => {
 // success
       res.status(200).json(userData);
     });
-    // redirect
-    res.redirect('/login');
+    res.render('homepage');
     // error
   } catch (err) {
     res.status(400).json(err);

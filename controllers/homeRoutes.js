@@ -33,7 +33,7 @@ router.get('/login', (req, res) => {
   // if logged in
   if (req.session.logged_in) {
     // redirect the request to another route
-    res.redirect('/dashboard');
+    res.redirect('/');
     return;
   }
 // login.handlebars
