@@ -102,7 +102,12 @@ npm start
 # Videos
 
 Login & Logout functionality walkthrough video:
+<br>
 https://github.com/Faizila/Tech_Blog/blob/main/public/images/login.gif
+<br>
+SignUp & Logout functionality walkthrough video:
+<br>
+https://github.com/Faizila/Tech_Blog/blob/main/public/images/signup.gif
 
 # Testing
 
