@@ -16,6 +16,7 @@ A site where developers can publish their blog posts and comment on other develo
 * Installation
 * Usage
 * Screenshots
+* Videos
 * Testing
 * Questions
 * Reference
@@ -97,6 +98,11 @@ npm start
 ![npmstart](https://user-images.githubusercontent.com/78191579/139748250-f5079436-8ab0-4ed7-9510-e4a8b3a3fd59.JPG)
 ![seeds](https://user-images.githubusercontent.com/78191579/139748253-4ff31e6c-b551-464b-bde0-2a7eed9a5aa4.JPG)
 ![hashing](https://user-images.githubusercontent.com/78191579/139748233-0bcd4db3-13a1-425c-8640-bd2a01390e63.JPG)
+
+# Videos
+
+Login & Logout functionality walkthrough video:
+https://github.com/Faizila/Tech_Blog/blob/main/public/images/login.gif
 
 # Testing
 
